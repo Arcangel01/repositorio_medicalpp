@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-md-6">
+            <h3>Realizar control medico</h3>
+            <form [formGroup]="formulario" (submit)="onSubmit()" class="shadow p-5">
+                <div class="form-group">
+                    <label for="">Estado de salud</label>
+                    <select class="form-control" required>
+                        <option selected disabled>Seleccione</option>
+                        <option>Enfermedad leve o lesión leve</option>
+                        <option>Estado menos grave</option>
+                        <option>Enfermedad o lesión grave</option>
+                        <option>Estado crítico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Procedimiento</label>
+                    <select class="form-control" required>
+                        <option selected disabled>Seleccione</option>
+                        <option>Inspección médica</option>
+                        <option>Auscultación</option>
+                        <option>Palpación</option>
+                        <option>Percusión (medicina)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Patologia</label>
+                    <select class="form-control" required>
+                        <option selected disabled>Seleccione</option>
+                        <option>Problemas respiratorios</option>
+                        <option>Trastornos metabólicos</option>
+                        <option>ASMA BRONQUIAL</option>
+                        <option>ARTRITIS REACTIVA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Descripcion</label>
+                    <textarea class="form-control" name="" id="" cols="10" rows="5" placeholder="Descripción del control medico"
+                    formControlName="Descripcion"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success" [disabled]="formulario.invalid">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

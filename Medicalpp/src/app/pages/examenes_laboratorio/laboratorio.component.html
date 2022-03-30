@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-md-6">
+            <h3>Registrar examen de laboratorio</h3>
+            <form [formGroup]="formulario" (submit)="onSubmit()" class="shadow p-5">
+                <div class="form-group">
+                    <label for="">Tipo de examen</label>
+                    <select class="form-control" required>
+                        <option selected disabled>Seleccione</option>
+                        <option>Hemograma completo</option>
+                        <option>Urinálisis completo</option>
+                        <option>Curva de tolerancia a la glucosa</option>
+                        <option>Colesterol Total</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre del examen de laboratorio</label>
+                    <input class="form-control" type="text" formControlName="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Imagen</label>
+                    <div class="custom-file">
+                        <input class="custom-file-input" (change)="updateControls($event)" type="file" required>
+                        <label class="custom-file-label" data-browse="Elegir imagen">{{fileName}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Descripcion</label>
+                    <textarea class="form-control" name="" id="" cols="10" rows="5" placeholder="Breve descripcion del examen"
+                    formControlName="Descripcion"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success" [disabled]="formulario.invalid">Registrar</button>
+            </form>
+        </div>
+        <div class="col-md-4 p-5">
+            <img [src]="imgURL" class="mx-auto d-block" height="350" width="350">
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
